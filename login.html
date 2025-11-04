@@ -12,18 +12,18 @@
         }
         
         :root {
-            --primary: #003366;
-            --secondary: #0066CC;
-            --accent: #FF6600;
-            --success: #28a745;
-            --danger: #dc3545;
-            --light: #f8f9fa;
-            --dark: #212529;
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --lighter-gray: #999999;
+            --off-white: #f5f5f5;
+            --white: #ffffff;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--black);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -32,21 +32,19 @@
         }
         
         .login-container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            max-width: 1000px;
+            background: var(--white);
+            border-radius: 0;
+            max-width: 440px;
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            animation: slideUp 0.6s ease-out;
+            padding: 60px 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 0.6s ease-out;
         }
         
-        @keyframes slideUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -54,160 +52,68 @@
             }
         }
         
-        .login-left {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .login-left::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 15s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(180deg); }
-        }
-        
-        .logo-section {
-            position: relative;
-            z-index: 1;
-        }
-        
         .logo {
-            width: 80px;
-            height: 80px;
-            background: var(--accent);
-            border-radius: 15px;
+            width: 60px;
+            height: 60px;
+            background: var(--black);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 36px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-weight: 900;
+            font-size: 32px;
+            margin: 0 auto 40px;
+            color: var(--white);
+            letter-spacing: -2px;
         }
         
-        .logo-section h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .logo-section p {
-            font-size: 1.1em;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        .features {
-            margin-top: 40px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            animation: fadeInLeft 0.6s ease-out;
-        }
-        
-        .feature-item:nth-child(2) { animation-delay: 0.2s; }
-        .feature-item:nth-child(3) { animation-delay: 0.4s; }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .feature-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        
-        .login-right {
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .login-form h2 {
-            color: var(--primary);
-            font-size: 2em;
+        h2 {
+            color: var(--black);
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
         
-        .login-form .subtitle {
-            color: #666;
+        .subtitle {
+            color: var(--light-gray);
+            text-align: center;
             margin-bottom: 40px;
+            font-size: 14px;
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: var(--dark);
+            color: var(--medium-gray);
             font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .input-wrapper {
-            position: relative;
-        }
-        
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #999;
-            font-size: 18px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .form-group input {
             width: 100%;
-            padding: 15px 15px 15px 45px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 16px;
+            border: 2px solid var(--off-white);
+            background: var(--white);
+            font-size: 15px;
             transition: all 0.3s;
-            background: white;
+            color: var(--black);
         }
         
         .form-group input:focus {
             outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 4px rgba(0,102,204,0.1);
+            border-color: var(--black);
+            background: var(--off-white);
+        }
+        
+        .form-group input::placeholder {
+            color: var(--lighter-gray);
         }
         
         .form-options {
@@ -215,6 +121,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
+            font-size: 13px;
         }
         
         .checkbox-wrapper {
@@ -224,49 +131,48 @@
         }
         
         .checkbox-wrapper input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             cursor: pointer;
+            accent-color: var(--black);
         }
         
         .checkbox-wrapper label {
-            color: #666;
-            font-size: 14px;
+            color: var(--light-gray);
             cursor: pointer;
             margin: 0;
             font-weight: normal;
         }
         
         .forgot-password {
-            color: var(--secondary);
+            color: var(--black);
             text-decoration: none;
-            font-size: 14px;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: opacity 0.3s;
         }
         
         .forgot-password:hover {
-            color: var(--primary);
+            opacity: 0.6;
         }
         
         .btn-login {
             width: 100%;
-            padding: 16px;
-            background: var(--secondary);
-            color: white;
+            padding: 18px;
+            background: var(--black);
+            color: var(--white);
             border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,102,204,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .btn-login:hover {
-            background: var(--primary);
+            background: var(--medium-gray);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,102,204,0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
         
         .btn-login:active {
@@ -275,10 +181,12 @@
         
         .divider {
             text-align: center;
-            margin: 30px 0;
+            margin: 35px 0;
             position: relative;
-            color: #999;
-            font-size: 14px;
+            color: var(--lighter-gray);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .divider::before,
@@ -286,25 +194,24 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 40%;
+            width: 42%;
             height: 1px;
-            background: #e0e0e0;
+            background: var(--off-white);
         }
         
         .divider::before { left: 0; }
         .divider::after { right: 0; }
         
         .social-login {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
         
         .btn-social {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            background: white;
+            padding: 14px;
+            border: 2px solid var(--off-white);
+            background: var(--white);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -313,273 +220,164 @@
             font-size: 14px;
             font-weight: 600;
             transition: all 0.3s;
+            color: var(--medium-gray);
         }
         
         .btn-social:hover {
-            border-color: var(--secondary);
-            background: #f8f9fa;
+            border-color: var(--black);
+            background: var(--off-white);
         }
         
         .register-link {
             text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 14px;
+            margin-top: 35px;
+            color: var(--light-gray);
+            font-size: 13px;
         }
         
         .register-link a {
-            color: var(--secondary);
+            color: var(--black);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .register-link a:hover {
-            color: var(--primary);
+            opacity: 0.6;
         }
         
         .alert {
-            padding: 15px;
-            border-radius: 10px;
+            padding: 16px;
             margin-bottom: 25px;
-            animation: slideIn 0.5s;
+            font-size: 14px;
+            font-weight: 500;
+            animation: slideIn 0.4s;
+            border-left: 4px solid;
         }
         
         @keyframes slideIn {
             from { 
-                transform: translateY(-20px); 
+                transform: translateX(-20px); 
                 opacity: 0; 
             }
             to { 
-                transform: translateY(0); 
+                transform: translateX(0); 
                 opacity: 1; 
             }
         }
         
         .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border-left: 4px solid var(--success);
+            background: var(--off-white);
+            color: var(--black);
+            border-color: var(--black);
         }
         
         .alert-danger {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 4px solid var(--danger);
+            background: var(--off-white);
+            color: var(--black);
+            border-color: var(--light-gray);
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .login-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .login-left {
                 padding: 40px 30px;
             }
             
-            .logo-section h1 {
-                font-size: 2em;
-            }
-            
-            .features {
-                display: none;
-            }
-            
-            .login-right {
-                padding: 40px 30px;
+            h2 {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <div class="login-left">
-            <div class="logo-section">
-                <div class="logo">S</div>
-                <h1>Sistema de Calendário SENAI</h1>
-                <p>Gerencie calendários, professores e agendas de forma inteligente e automatizada.</p>
+        <div class="logo">S</div>
+        
+        <h2>Sistema SENAI</h2>
+        <p class="subtitle">Entre com suas credenciais</p>
+        
+        <div id="alertContainer"></div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="seu.email@senai.br" required>
             </div>
             
-            <div class="features">
-                <div class="feature-item">
-                    <div class="feature-icon">📅</div>
-                    <span>Geração automática de calendários</span>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">👨‍🏫</div>
-                    <span>Gestão completa de professores</span>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📊</div>
-                    <span>Dashboard com estatísticas em tempo real</span>
-                </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
             </div>
-        </div>
+            
+            <div class="form-options">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Lembrar-me</label>
+                </div>
+                <a href="#" class="forgot-password">Esqueceu?</a>
+            </div>
+            
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
         
-        <div class="login-right">
-            <div class="login-form">
-                <h2>Bem-vindo!</h2>
-                <p class="subtitle">Entre com suas credenciais para acessar o sistema</p>
-                
-                <div id="alertContainer"></div>
-                
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="email">Email ou Usuário</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">👤</span>
-                            <input type="text" id="email" name="email" placeholder="seu.email@senai.br" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="password">Senha</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">🔒</span>
-                            <input type="password" id="password" name="password" placeholder="••••••••" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-options">
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="remember" name="remember">
-                            <label for="remember">Lembrar-me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
-                    </div>
-                    
-                    <button type="submit" class="btn-login">Entrar no Sistema</button>
-                </form>
-                
-                <div class="divider">ou continue com</div>
-                
-                <div class="social-login">
-                    <button class="btn-social">
-                        <span>🔵</span> Microsoft
-                    </button>
-                    <button class="btn-social">
-                        <span>🔴</span> Google
-                    </button>
-                </div>
-                
-                <div class="register-link">
-                    Não tem uma conta? <a href="#">Solicite acesso</a>
-                </div>
-            </div>
+        <div class="register-link">
+            Não tem conta? <a href="#">Solicite acesso</a>
         </div>
     </div>
     
     <script>
-        // Dados de usuário de exemplo (simulação)
         const usuariosValidos = [
             { email: 'admin@senai.br', senha: 'admin123', nome: 'Administrador' },
             { email: 'professor@senai.br', senha: 'prof123', nome: 'Professor Silva' },
             { email: 'coordenador@senai.br', senha: 'coord123', nome: 'Coordenador Costa' }
         ];
         
-        // Função para mostrar alertas
         function mostrarAlerta(mensagem, tipo) {
             const alertContainer = document.getElementById('alertContainer');
-            alertContainer.innerHTML = `
-                <div class="alert alert-${tipo}">
-                    ${mensagem}
-                </div>
-            `;
-            
-            // Remove o alerta após 5 segundos
-            setTimeout(() => {
-                alertContainer.innerHTML = '';
-            }, 5000);
+            alertContainer.innerHTML = `<div class="alert alert-${tipo}">${mensagem}</div>`;
+            setTimeout(() => alertContainer.innerHTML = '', 5000);
         }
         
-        // Handler do formulário de login
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const email = document.getElementById('email').value.trim();
             const senha = document.getElementById('password').value;
-            const lembrar = document.getElementById('remember').checked;
             
-            // Validação básica
             if (!email || !senha) {
-                mostrarAlerta('❌ Por favor, preencha todos os campos!', 'danger');
+                mostrarAlerta('Preencha todos os campos', 'danger');
                 return;
             }
             
-            // Simula verificação de credenciais
             const usuarioEncontrado = usuariosValidos.find(
                 u => u.email === email && u.senha === senha
             );
             
             if (usuarioEncontrado) {
-                // Login bem-sucedido
-                mostrarAlerta(`✅ Login realizado com sucesso! Bem-vindo, ${usuarioEncontrado.nome}!`, 'success');
-                
-                // Simula salvamento no armazenamento local se "lembrar-me" estiver marcado
-                if (lembrar) {
-                    console.log('Usuário optou por ser lembrado');
-                }
-                
-                // Simula redirecionamento após 2 segundos
+                mostrarAlerta(`Bem-vindo, ${usuarioEncontrado.nome}`, 'success');
                 setTimeout(() => {
-                    console.log('Redirecionando para o dashboard...');
-                    // Em produção: window.location.href = 'dashboard.html';
-                    alert('Você seria redirecionado para o sistema agora!\n\nUsuários de teste:\n• admin@senai.br / admin123\n• professor@senai.br / prof123\n• coordenador@senai.br / coord123');
+                    alert('Redirecionando...\n\nUsuários:\n• admin@senai.br / admin123\n• professor@senai.br / prof123\n• coordenador@senai.br / coord123');
                 }, 2000);
-                
             } else {
-                // Login falhou
-                mostrarAlerta('❌ Email ou senha incorretos! Tente novamente.', 'danger');
-                
-                // Limpa o campo de senha
+                mostrarAlerta('Email ou senha incorretos', 'danger');
                 document.getElementById('password').value = '';
             }
         });
         
-        // Handler para "Esqueceu a senha?"
         document.querySelector('.forgot-password').addEventListener('click', function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value.trim();
             
             if (email) {
-                mostrarAlerta(`📧 Instruções de recuperação enviadas para ${email}`, 'success');
+                mostrarAlerta(`Instruções enviadas para ${email}`, 'success');
             } else {
-                mostrarAlerta('⚠️ Digite seu email primeiro para recuperar a senha', 'danger');
-                document.getElementById('email').focus();
+                mostrarAlerta('Digite seu email primeiro', 'danger');
             }
         });
         
-        // Handlers para login social (simulação)
-        document.querySelectorAll('.btn-social').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const provider = this.textContent.trim();
-                mostrarAlerta(`🔄 Redirecionando para autenticação ${provider}...`, 'success');
-                console.log(`Login social com ${provider}`);
-            });
-        });
-        
-        // Handler para link de registro
         document.querySelector('.register-link a').addEventListener('click', function(e) {
             e.preventDefault();
-            alert('Funcionalidade de solicitação de acesso!\n\nEm produção, isso abriria um formulário de registro ou redirecionaria para a página de solicitação de conta.');
+            alert('Formulário de solicitação de acesso');
         });
-        
-        // Adiciona efeito de focus nos inputs
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
-        });
-        
-        // Mensagem de boas-vindas no console
-        console.log('%c🎓 Sistema de Calendário SENAI', 'color: #003366; font-size: 20px; font-weight: bold;');
-        console.log('%cUsuários de teste disponíveis:', 'color: #0066CC; font-size: 14px;');
-        console.log('• admin@senai.br / admin123');
-        console.log('• professor@senai.br / prof123');
-        console.log('• coordenador@senai.br / coord123');
     </script>
 </body>
 </html>
