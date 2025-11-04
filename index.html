@@ -118,6 +118,7 @@
         }
         
         .stat-card {
+            border-radius: 15%;
             background: var(--white);
             border: 2px solid var(--black);
             padding: 30px;
@@ -125,6 +126,7 @@
         }
         
         .stat-card h3 {
+            border-radius: 15%;
             font-size: 48px;
             font-weight: 900;
             margin-bottom: 10px;
@@ -148,6 +150,7 @@
         }
         
         .card h2 {
+            border-radius: 15%;
             color: var(--black);
             margin-bottom: 25px;
             font-size: 20px;
@@ -159,6 +162,7 @@
         }
         
         .calendar-grid {
+            border-radius: 15%;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
@@ -166,6 +170,7 @@
         }
         
         .calendar-card {
+            border-radius: 15%;
             background: var(--black);
             color: var(--white);
             padding: 25px;
@@ -173,22 +178,26 @@
         }
         
         .calendar-card h3 {
+            border-radius: 15%;
             margin-bottom: 15px;
             font-size: 18px;
             font-weight: 700;
         }
         
         .calendar-card p {
+            border-radius: 15%;
             font-size: 13px;
             color: var(--lighter-gray);
             margin-bottom: 8px;
         }
         
         .form-group {
+            border-radius:15%;
             margin-bottom: 20px;
         }
         
         .form-group label {
+            border-radius: 15%;
             display: block;
             margin-bottom: 8px;
             color: var(--medium-gray);
@@ -233,23 +242,31 @@
         }
         
         .btn-primary {
-            background: var(--black);
-            color: var(--white);
+            /* Mantém borda escura permanente com fundo branco */
+            background: var(--white);
+            color: var(--black);
+            border: 2px solid var(--black);
         }
         
         .btn-primary:hover {
-            background: var(--white);
+            /* Hover apenas muda o fundo ligeiramente */
+            background: var(--off-white);
             color: var(--black);
+            border: 2px solid var(--black);
         }
         
         .btn-secondary {
-            background: var(--white);
-            color: var(--black);
+            /* Mantém borda escura permanente com fundo preto */
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid var(--black);
         }
         
         .btn-secondary:hover {
-            background: var(--black);
+            /* Hover apenas muda o fundo ligeiramente */
+            background: var(--dark-gray);
             color: var(--white);
+            border: 2px solid var(--black);
         }
         
         table {
